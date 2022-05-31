@@ -24,9 +24,3 @@ name = "channels"
 path = "fuzz_targets/channels.rs"
 test = false
 doc = false
-
-[[bin]]
-name = "global_logging"
-path = "fuzz_targets/global_logging.rs"
-test = false
-doc = false
