@@ -46,14 +46,14 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Start analysis of c api
+      - name: Start analysis of Channels
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --file mayhemfiles/Mayhemfile_Channels --image ${{ steps.meta.outputs.tags }}
           sarif-output: sarif
 
-      - name: Start analysis of rewriter
+      - name: Start analysis of Global Logging
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
