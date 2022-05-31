@@ -1,0 +1,6 @@
+project: fern
+target: channels
+duration: 90
+
+cmds:
+    - cmd: /channels
