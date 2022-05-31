@@ -35,7 +35,7 @@ impl LogVerify {
                 assert_eq!(self.error, false, "expected only one error message");
                 self.error = true;
             }
-            other => panic!("unexpected message: '{}'", other),
+            _ => {},
         }
     }
 }
