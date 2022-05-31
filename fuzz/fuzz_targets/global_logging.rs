@@ -22,20 +22,17 @@ impl LogVerify {
     }
     fn log(&mut self, record: &log::Record) {
         let formatted_message = format!("{}", record.args());
-        match &*formatted_message {
-            "[INFO] Test information message" => {
-                assert_eq!(self.info, false, "expected only one info message");
-                self.info = true;
-            }
-            "[WARN] Test warning message" => {
-                assert_eq!(self.warn, false, "expected only one warn message");
-                self.warn = true;
-            }
-            "[ERROR] Test error message" => {
-                assert_eq!(self.error, false, "expected only one error message");
-                self.error = true;
-            }
-            _ => {},
+        if formatted_message.starts_with("[INFO] ") {
+            assert_eq!(self.info, false, "expected only one info message");
+            self.info = true;
+        } else if formatted_message.starts_with("[WARN] ") {
+            assert_eq!(self.warn, false, "expected only one warn message");
+            self.warn = true;
+        } else if formatted_message.starts_with("[ERROR] ") {
+            assert_eq!(self.error, false, "expected only one error message");
+            self.error = true;
+        } else {
+            panic!();
         }
     }
 }
