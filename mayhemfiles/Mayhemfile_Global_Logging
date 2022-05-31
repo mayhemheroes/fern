@@ -1,0 +1,6 @@
+project: fern
+target: global-logging
+duration: 90
+
+cmds:
+    - cmd: /global_logging
