@@ -17,4 +17,3 @@ FROM --platform=linux/amd64 rustlang/rust:nightly
 
 ## TODO: Change <Path in Builder Stage>
 COPY --from=builder /fern/fuzz/target/x86_64-unknown-linux-gnu/release/channels /
-COPY --from=builder /fern/fuzz/target/x86_64-unknown-linux-gnu/release/global_logging /

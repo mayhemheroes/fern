@@ -53,13 +53,6 @@ jobs:
           args: --file mayhemfiles/Mayhemfile_Channels --image ${{ steps.meta.outputs.tags }}
           sarif-output: sarif
 
-      - name: Start analysis of Global Logging
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --file mayhemfiles/Mayhemfile_Global_Logging --image ${{ steps.meta.outputs.tags }}
-          sarif-output: sarif
-
       - name: Upload SARIF file(s)
         uses: github/codeql-action/upload-sarif@v1
         with:
